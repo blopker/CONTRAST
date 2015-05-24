@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>CONTRAST</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./normalize.css">
+    <link rel="stylesheet" href="./skeleton.css">
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body class="background">
+    <div class="container foreground">
+        <h1>CONTRAST</h1>
+        <table class="u-full-width controls">
+          <thead>
+            <tr>
+              <th>Background</th>
+              <th>Luminance (L1)</th>
+              <th>Foreground</th>
+              <th>Luminance (L2)</th>
+              <th>Contrast Ratio</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="color" class="picker1"> <input type="text" class="value1"></td>
+              <td class="l1"></td>
+              <td><input type="color" class="picker2"> <input type="text" class="value2"></td>
+              <td class="l2"></td>
+              <td class="ratio-container"><span class="ratio"></span>:1</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="explanation">
+            <h2>What?</h2>
+            <p>
+                This site compares two colors by their <a href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#contrast-ratiodef">contrast ratio</a>. From a usability perspective, <a href="http://www.w3.org/WAI/WCAG20/quickref/#qr-visual-audio-contrast-contrast">the W3C recommends</a> a minimum contrast ratio of 4.5:1 for any elements that contain content and a minimum ratio of 3:1 for large text like headers.
+            </p>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>

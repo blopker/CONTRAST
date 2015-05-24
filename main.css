@@ -1,0 +1,24 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.container {
+    margin-top: 100px;
+}
+
+input[type="text"] {
+    height: 24px;
+    width: 100px;
+}
+
+input {
+    margin: 0;
+}
+
+.error {
+    color: red;
+}
