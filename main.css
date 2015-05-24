@@ -7,7 +7,7 @@ html {
 }
 
 .container {
-    margin-top: 100px;
+    padding-top: 100px;
 }
 
 input[type="text"] {
@@ -21,4 +21,8 @@ input {
 
 .error {
     color: red;
+}
+
+footer {
+    margin-top: 20px;
 }
