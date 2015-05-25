@@ -68,11 +68,11 @@ function update () {
     foreground.style.color = picker2.value;
 
     var digits = 2;
-    l1.innerText = relativeLuminance(picker1.value).toFixed(digits);
-    l2.innerText = relativeLuminance(picker2.value).toFixed(digits);
+    l1.innerHTML = relativeLuminance(picker1.value).toFixed(digits);
+    l2.innerHTML = relativeLuminance(picker2.value).toFixed(digits);
 
     var cRatio = contrastRatio(picker1.value, picker2.value).toFixed(digits);
-    ratio.innerText = cRatio;
+    ratio.innerHTML = cRatio;
 
     if (cRatio < 4.5 ) {
         ratioContainer.className = 'error';
