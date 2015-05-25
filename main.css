@@ -13,9 +13,11 @@ html {
 input[type="text"] {
     height: 24px;
     width: 100px;
+    margin-left: 10px;
 }
 
 input {
+    float: left;
     margin: 0;
 }
 
