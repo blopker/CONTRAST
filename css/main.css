@@ -11,9 +11,10 @@ html {
 }
 
 input[type="text"] {
-    height: 24px;
+    height: 30px;
     width: 100px;
     margin-left: 10px;
+    color: black;
 }
 
 input {
