@@ -25,24 +25,32 @@
           </thead>
           <tbody>
             <tr>
-              <td><input type="text" class="b-picker" value="#ffffff"> <input type="text" class="b-text"></td>
+              <td><input type="text" class="b-picker"> <input tabindex="0" type="text" class="b-text"></td>
               <td class="l1"></td>
-              <td><input type="text" class="f-picker" value="#000000"> <input type="text" class="f-text"></td>
+              <td><input type="text" class="f-picker"> <input tabindex="0" type="text" class="f-text"></td>
               <td class="l2"></td>
-              <td class="ratio-container"><span class="ratio"></span>:1</td>
+              <td class="ratio-container">
+                <strong><span class="ratio"></span>:1</strong>
+              </td>
             </tr>
           </tbody>
         </table>
 
-        <div class="explanation">
+        <section class="tests">
+          <h2>Tests</h2>
+          <div>Header text: <span class="header-test test">PASS</span></div>
+          <div>Body text: <span class="body-test test">PASS</span></div>
+        </section>
+
+        <section class="explanation">
             <h2>What?</h2>
             <p>
                 This site compares two colors by their <a href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#contrast-ratiodef">contrast ratio</a>. From a usability perspective <a href="http://www.w3.org/WAI/WCAG20/quickref/#qr-visual-audio-contrast-contrast">the W3C recommends</a> a minimum contrast ratio of 4.5:1 for any elements that contain content. A minimum ratio of 3:1 is recommended for large text like headers.
             </p>
 
-            <h5>On Safari, IE or mobile?</h5>
-            <p>This works better on Chrome or Firefox on desktop.</p>
-        </div>
+            <h5>On mobile?</h5>
+            <p>This works better on the desktop.</p>
+        </section>
 
         <footer>Mashpotatoed by <a href="http://blopker.com">blopker</a>. <a href="https://github.com/blopker/CONTRAST">Source</a>.</footer>
     </div>

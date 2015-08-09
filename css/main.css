@@ -26,6 +26,14 @@ input {
     color: red;
 }
 
+section {
+    margin-bottom: 2.5rem;
+}
+
+.tests .test {
+    font-weight: bold;
+}
+
 footer {
     margin-top: 20px;
 }

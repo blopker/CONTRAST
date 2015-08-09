@@ -9,8 +9,8 @@ var spectrumOpts = {
 };
 
 var bPicker = $('.b-picker').spectrum(spectrumOpts);
-var bText = $('.b-text');
 var fPicker = $('.f-picker').spectrum(spectrumOpts);
+var bText = $('.b-text');
 var fText = $('.f-text');
 
 var l1 = $('.l1');
@@ -18,11 +18,32 @@ var l2 = $('.l2');
 var ratio = $('.ratio');
 var ratioContainer = $('.ratio-container');
 
+var headerTest = $('.header-test');
+var bodyTest = $('.body-test');
+
+
+function getJsonFromUrl() {
+  var query = location.search.substr(1);
+  var result = {};
+  query.split('&').forEach(function(part) {
+    var item = part.split('=');
+    result[item[0]] = decodeURIComponent(item[1]);
+  });
+  return result;
+}
+
+
+var init = getJsonFromUrl();
+init.b = init.b || '#ffffff';
+init.f = init.f || '#000000';
+
+bPicker.spectrum('set', init.b);
+fPicker.spectrum('set', init.f);
 var bColor = bPicker.spectrum('get');
 var fColor = fPicker.spectrum('get');
 
+
 function relativeLuminance(color) {
-    color = color.toRgb();
     var RsRGB = color.r / 255;
     var GsRGB = color.g / 255;
     var BsRGB = color.b / 255;
@@ -49,31 +70,45 @@ function update () {
     bColor = bPicker.spectrum('get');
     fColor = fPicker.spectrum('get');
 
+    var bRgb = bColor.toRgb();
+    var fRgb = fColor.toRgb();
+
     background.css('background', bColor.toHexString());
     foreground.css('color', fColor.toHexString());
 
     var digits = 2;
-    l1.html(relativeLuminance(bColor).toFixed(digits));
-    l2.html(relativeLuminance(fColor).toFixed(digits));
+    l1.html(relativeLuminance(bRgb).toFixed(digits));
+    l2.html(relativeLuminance(fRgb).toFixed(digits));
 
-    var cRatio = contrastRatio(bColor, fColor).toFixed(digits);
+    var cRatio = contrastRatio(bRgb, fRgb).toFixed(digits);
     ratio.html(cRatio);
 
     if (cRatio < 4.5 ) {
         ratioContainer.addClass('error');
+        bodyTest.html('FAIL');
     } else {
-        ratioContainer.removeClass('error')
+        ratioContainer.removeClass('error');
+        bodyTest.html('PASS');
     }
 
+    if (cRatio < 3 ) {
+        headerTest.html('FAIL');
+    } else {
+        headerTest.html('PASS');
+    }
+
+    // Update URL
+    var params = $.param({b: bColor.toHexString(), f: fColor.toHexString()});
+    history.replaceState({}, '', '?' + params);
 }
 
-function pickerUpdate (e) {
-    bText.val(bColor.toHexString());
-    fText.val(fColor.toHexString());
+function pickerUpdate () {
+    bText.val(bPicker.spectrum('get'));
+    fText.val(fPicker.spectrum('get'));
     update();
 }
 
-function textUpdate (e) {
+function textUpdate () {
     bPicker.spectrum('set', bText.val());
     fPicker.spectrum('set', fText.val());
     update();
