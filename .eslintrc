@@ -1,0 +1,14 @@
+globals:
+  $: false
+
+env:
+  browser: true
+  node: true
+
+rules:
+  no-underscore-dangle: 0
+  camelcase: 2
+  curly: 2
+  strict: 2
+  quotes: [2, single]
+  max-len: [2, 120, 4]

@@ -5,9 +5,10 @@
     <title>CONTRAST</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="./normalize.css">
-    <link rel="stylesheet" href="./skeleton.css">
-    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/skeleton.css">
+    <link rel="stylesheet" href="./css/spectrum.css">
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 <body class="background">
     <div class="container foreground">
@@ -24,9 +25,9 @@
           </thead>
           <tbody>
             <tr>
-              <td><input type="color" class="picker1"> <input type="text" class="value1"></td>
+              <td><input type="text" class="b-picker" value="#ffffff"> <input type="text" class="b-text"></td>
               <td class="l1"></td>
-              <td><input type="color" class="picker2"> <input type="text" class="value2"></td>
+              <td><input type="text" class="f-picker" value="#000000"> <input type="text" class="f-text"></td>
               <td class="l2"></td>
               <td class="ratio-container"><span class="ratio"></span>:1</td>
             </tr>
@@ -45,6 +46,8 @@
 
         <footer>Mashpotatoed by <a href="http://blopker.com">blopker</a>. <a href="https://github.com/blopker/CONTRAST">Source</a>.</footer>
     </div>
-    <script src="./main.js"></script>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/spectrum-min.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 </html>
